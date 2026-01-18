@@ -207,7 +207,7 @@ if len(df_filtered) > 0:
         height=400
     )
     
-    st.plotly_chart(fig_temp, use_container_width=True)
+    st.plotly_chart(fig_temp, )
 
 # =====================
 # GRAPHIQUE 2: COMPARAISON PRÉCIPITATIONS
@@ -245,7 +245,7 @@ if len(df_filtered) > 0:
         height=400
     )
     
-    st.plotly_chart(fig_precip, use_container_width=True)
+    st.plotly_chart(fig_precip, )
 
 # =====================
 # GRAPHIQUE 3: RADAR
@@ -303,7 +303,7 @@ if len(df_filtered) > 0 and len(selected_deps) >= 2:
         height=500
     )
     
-    st.plotly_chart(fig_radar, use_container_width=True)
+    st.plotly_chart(fig_radar, )
 
 # Footer
 st.markdown("<br>", unsafe_allow_html=True)

@@ -178,7 +178,7 @@ if len(df_filtered) > 0:
         height=400
     )
     
-    st.plotly_chart(fig_temp, use_container_width=True)
+    st.plotly_chart(fig_temp, )
 
 # =====================
 # GRAPHIQUE 2: PRÉCIPITATIONS
@@ -207,7 +207,7 @@ if len(df_filtered) > 0:
         height=400
     )
     
-    st.plotly_chart(fig_precip, use_container_width=True)
+    st.plotly_chart(fig_precip, )
 
 # =====================
 # GRAPHIQUE 3: SAISONNALITÉ
@@ -240,7 +240,7 @@ if len(df_filtered) > 0:
             height=400
         )
         
-        st.plotly_chart(fig_sais_temp, use_container_width=True)
+        st.plotly_chart(fig_sais_temp, )
     
     with col2:
         precip_mois = df_filtered.groupby("mois")["RR1"].sum().reset_index()
@@ -264,7 +264,7 @@ if len(df_filtered) > 0:
             height=400
         )
         
-        st.plotly_chart(fig_sais_precip, use_container_width=True)
+        st.plotly_chart(fig_sais_precip, )
 
 # Footer
 st.markdown("<br>", unsafe_allow_html=True)

@@ -60,6 +60,14 @@ DATA_DIR = BASE_DIR / "data"
 def load_data():
     data_path = DATA_DIR / "clean" / "meteo_clean.parquet"
     df = pd.read_parquet(data_path)
+    # Renommer les colonnes en minuscules
+    df = df.rename(columns={
+        'DEPARTEMENT': 'dep',
+        'LAT': 'lat',
+        'LON': 'lon',
+        'ALTI': 'alti'
+    })
+    df['dep'] = df['dep'].astype(str).str.zfill(2)
     df["date"] = pd.to_datetime(df["date"])
     return df
 

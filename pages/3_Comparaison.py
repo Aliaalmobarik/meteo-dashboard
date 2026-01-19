@@ -233,7 +233,7 @@ for dep in selected_deps_str:
     })
 
 df_stats = pd.DataFrame(stats)
-st.dataframe(df_stats, use_container_width=True, hide_index=True)
+st.dataframe(df_stats, hide_index=True)
 
 # =====================
 # GRAPHIQUES COMPARATIFS
@@ -266,7 +266,7 @@ with col1:
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         coloraxis_showscale=False
     )
-    st.plotly_chart(fig_temp_bar, use_container_width=True)
+    st.plotly_chart(fig_temp_bar)
 
 # --- Évolution mensuelle comparée ---
 with col2:
@@ -293,7 +293,7 @@ with col2:
             yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
             legend=dict(title="Département", bgcolor='rgba(0,0,0,0.3)')
         )
-        st.plotly_chart(fig_temp_line, use_container_width=True)
+        st.plotly_chart(fig_temp_line)
     else:
         # Box plot pour un mois spécifique
         fig_temp_box = px.box(
@@ -312,7 +312,7 @@ with col2:
             font=dict(family="Poppins", color="#e8e8e8"),
             showlegend=False
         )
-        st.plotly_chart(fig_temp_box, use_container_width=True)
+        st.plotly_chart(fig_temp_box)
 
 # =====================
 # PRÉCIPITATIONS
@@ -346,7 +346,7 @@ with col3:
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         coloraxis_showscale=False
     )
-    st.plotly_chart(fig_precip_bar, use_container_width=True)
+    st.plotly_chart(fig_precip_bar)
 
 # --- Évolution mensuelle précipitations ---
 with col4:
@@ -374,7 +374,7 @@ with col4:
             yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
             legend=dict(title="Département", bgcolor='rgba(0,0,0,0.3)')
         )
-        st.plotly_chart(fig_precip_line, use_container_width=True)
+        st.plotly_chart(fig_precip_line)
     else:
         # Box plot précipitations
         fig_precip_box = px.box(
@@ -393,7 +393,7 @@ with col4:
             font=dict(family="Poppins", color="#e8e8e8"),
             showlegend=False
         )
-        st.plotly_chart(fig_precip_box, use_container_width=True)
+        st.plotly_chart(fig_precip_box)
 
 # =====================
 # RADAR CHART MULTI-VARIABLES
@@ -485,7 +485,7 @@ fig_radar.update_layout(
     title="🎯 Profil climatique normalisé"
 )
 
-st.plotly_chart(fig_radar, use_container_width=True)
+st.plotly_chart(fig_radar)
 
 # =====================
 # ÉVOLUTION ANNUELLE COMPARÉE
@@ -521,7 +521,7 @@ with col5:
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         legend=dict(title="Département", bgcolor='rgba(0,0,0,0.3)')
     )
-    st.plotly_chart(fig_temp_annual, use_container_width=True)
+    st.plotly_chart(fig_temp_annual)
 
 with col6:
     precip_annual = df_annual.groupby(["annee", "DEPARTEMENT", "NUM_POSTE"])["RR1"].sum().reset_index()
@@ -546,7 +546,7 @@ with col6:
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         legend=dict(title="Département", bgcolor='rgba(0,0,0,0.3)')
     )
-    st.plotly_chart(fig_precip_annual, use_container_width=True)
+    st.plotly_chart(fig_precip_annual)
 
 # =====================
 # FOOTER
@@ -568,3 +568,4 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
+

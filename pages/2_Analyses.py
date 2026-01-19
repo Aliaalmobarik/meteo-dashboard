@@ -224,7 +224,7 @@ with col_a1:
         xaxis=dict(gridcolor='rgba(255,255,255,0.1)', dtick=1),
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)')
     )
-    st.plotly_chart(fig_temp_annual, use_container_width=True)
+    st.plotly_chart(fig_temp_annual)
 
 # --- Précipitations annuelles ---
 with col_a2:
@@ -248,7 +248,7 @@ with col_a2:
         xaxis=dict(gridcolor='rgba(255,255,255,0.1)', dtick=1),
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)')
     )
-    st.plotly_chart(fig_precip_annual, use_container_width=True)
+    st.plotly_chart(fig_precip_annual)
 
 # =====================
 # GRAPHIQUES - LIGNE 1 : Température & Précipitations MENSUELLES
@@ -311,7 +311,7 @@ with col1:
         xaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)')
     )
-    st.plotly_chart(fig_temp, use_container_width=True)
+    st.plotly_chart(fig_temp)
 
 # --- Précipitations cumulées ---
 with col2:
@@ -351,7 +351,7 @@ with col2:
         xaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)')
     )
-    st.plotly_chart(fig_precip, use_container_width=True)
+    st.plotly_chart(fig_precip)
 
 # =====================
 # GRAPHIQUES - LIGNE 2 : Humidité & Rose des vents
@@ -398,7 +398,7 @@ with col3:
         yaxis=dict(gridcolor='rgba(255,255,255,0.1)'),
         coloraxis_showscale=False
     )
-    st.plotly_chart(fig_humid, use_container_width=True)
+    st.plotly_chart(fig_humid)
 
 # --- Rose des Vents ---
 with col4:
@@ -468,7 +468,7 @@ with col4:
                 bordercolor='rgba(255,255,255,0.1)'
             )
         )
-        st.plotly_chart(fig_wind, use_container_width=True)
+        st.plotly_chart(fig_wind)
     else:
         st.warning("⚠️ Pas de données de vent disponibles pour cette période")
 
@@ -528,3 +528,4 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
+

@@ -435,3 +435,4 @@ st.markdown("""
 # =====================
 st.markdown("---")
 st.caption("🛠️ Projet M2 GMS | Source : Météo-France | Réalisé avec Streamlit & Folium")
+

@@ -4,7 +4,7 @@ import streamlit as st
 # CONFIGURATION PAGE D'ACCUEIL
 # =====================
 st.set_page_config(
-    page_title="🌦️ GeoMétéo Dashboard",
+    page_title=" GeoMétéo Dashboard",
     page_icon="🌦️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -15,6 +15,7 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
     
+    /* Cacher le menu de navigation automatique de Streamlit */
     [data-testid="stSidebarNav"] {
         display: none !important;
     }
@@ -94,25 +95,27 @@ with st.sidebar:
         <div style="text-align: center; padding: 20px 0;">
             <span style="font-size: 4rem;">🌦️</span>
             <h2 style="margin: 15px 0; font-size: 1.8rem;">GeoMétéo</h2>
-            <p style="color: #888; font-size: 0.9rem;">Dashboard Météo - Région PACA</p>
+            <p style="color: #888; font-size: 0.9rem;">Dashboard Météo - Géodatavisualisation</p>
         </div>
     """, unsafe_allow_html=True)
     
     st.markdown("---")
     
+    # Navigation personnalisée
     st.markdown("""
         <p style="color: #00d2ff; font-size: 0.9rem; margin-bottom: 15px; padding-left: 10px;">📍 Navigation</p>
     """, unsafe_allow_html=True)
     
-    st.page_link("app.py", label="🏠 Accueil")
-    st.page_link("pages/1_Carte.py", label="🗺️ Carte")
-    st.page_link("pages/2_Analyses.py", label="📈 Analyses")
-    st.page_link("pages/3_Comparaison.py", label="🔄 Comparaison")
+    st.page_link("app.py", label="🏠 Accueil", icon=None)
+    st.page_link("pages/1_Carte.py", label="🗺️ Carte", icon=None)
+    st.page_link("pages/2_Analyses.py", label="📈 Analyses", icon=None)
+    st.page_link("pages/3_Comparaison.py", label="🔄 Comparaison", icon=None)
 
 # =====================
 # CONTENU PRINCIPAL
 # =====================
 
+# Titre de bienvenue
 st.markdown("""
     <div class="welcome-box">
         <h1>🌦️ GeoMétéo Dashboard</h1>
@@ -120,11 +123,12 @@ st.markdown("""
             Observatoire Météorologique Spatio-temporel
         </p>
         <p style="color: #666; font-size: 1rem; margin-top: 15px;">
-            Données Météo-France • Région PACA • 2020-2023
+            Données Météo-France • Projet Géodata-visualisation 
         </p>
     </div>
 """, unsafe_allow_html=True)
 
+# Fonctionnalités
 st.markdown("### 🚀 Fonctionnalités")
 
 col1, col2 = st.columns(2)
@@ -155,6 +159,7 @@ with col2:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
+# Données disponibles
 st.markdown("### 📊 Données Disponibles")
 
 col3, col4, col5, col6 = st.columns(4)
@@ -195,6 +200,7 @@ with col6:
         </div>
     """, unsafe_allow_html=True)
 
+# Footer
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown("""
     <div style="
@@ -207,7 +213,7 @@ st.markdown("""
         <p style="color: #666; margin: 0; font-size: 0.9rem;">
             🎓 <strong>Projet M2 GMS</strong> | 
             💾 Données <strong>Météo-France</strong> | 
-            🛠️ Streamlit, Folium, Plotly |
+            🛠️ Streamlit, Folium, Plotly
             👩‍💻 <strong style="color: #00d2ff;">Alia AL MOBARIK</strong>
         </p>
     </div>

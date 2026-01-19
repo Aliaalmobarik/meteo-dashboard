@@ -311,8 +311,8 @@ with k3:
     st.metric("🌧️ Précipitations", f"{precip_par_station:.1f} mm",
               delta="Cumul moyen/station")
 with k4:
-    st.metric("⏲️ Pression", f"{df_map['PMER'].mean():.1f} hPa",
-              delta=f"±{df_map['PMER'].std():.1f}")
+    st.metric("🌬️ Pression", f"{df_map['PMER'].mean():.1f} hPa",
+              delta=f"Min: {df_map['PMER'].min():.1f} hPa")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
